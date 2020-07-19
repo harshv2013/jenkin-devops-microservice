@@ -30,7 +30,8 @@ pipeline{
 	environment {
 		dockerHome = tool 'myDocker'
 		mavenHome = tool 'myMaven'
-		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+		nodeHome = tool 'myNode'
+		PATH = "$dockerHome/bin:$mavenHome/bin:$nodeHome/bin:$PATH"
 	}
 	// agent { docker { image 'maven:3.6.3'} }
 	stages{
