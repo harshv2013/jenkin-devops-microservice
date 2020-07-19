@@ -24,12 +24,10 @@
 // DECLARATIVE
 pipeline{
 	// agent any
-	agent {
-    docker {
-        dockerfile true
-        label 'docker'
-    }
-    }
+	agent { 
+		lavel 'docker'
+		image 'maven:3.6.3'
+		}
 	stages{
 		stage('Build'){
 			steps{
