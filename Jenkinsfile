@@ -23,16 +23,17 @@
 // ##############################################
 // DECLARATIVE
 pipeline{
-	// agent any
+	agent any
 	// agent any
 	// agent { docker { image 'maven:3.6.3'} }
-	agent { docker { image 'node:14.5.0'} }
-	// environment {
-	// 	dockerHome = tool 'myDocker'
-	// 	mavenHome = tool 'myMaven'
-	// 	nodeHome = tool 'myNodeJs'
-	// 	PATH = "$dockerHome/bin:$mavenHome/bin:$nodeHome/bin:$PATH"
-	// }
+	// agent { docker { image 'node:14.5.0'} }
+	
+	environment {
+		dockerHome = tool 'myDocker'
+		mavenHome = tool 'myMaven'
+		nodeHome = tool 'myNodeJs'
+		PATH = "$dockerHome/bin:$mavenHome/bin:$nodeHome/bin:$PATH"
+	}
 	// agent { docker { image 'maven:3.6.3'} }
 	stages{
 		stage('Build'){
