@@ -26,7 +26,6 @@ pipeline{
 	// agent any
 	agent { 
 		lavel 'docker'
-		image 'maven:3.6.3'
 		}
 	stages{
 		stage('Build'){
