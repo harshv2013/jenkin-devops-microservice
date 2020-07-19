@@ -23,8 +23,13 @@
 // ##############################################
 // DECLARATIVE
 pipeline{
-	// agent any
-	agent { docker { image 'maven:3.6.3'}}
+	// agent  any
+	agent {
+    docker {
+        image 'maven:3-alpine'
+        label 'docker'
+    }
+}
 	stages{
 		stage('Build'){
 			steps{
