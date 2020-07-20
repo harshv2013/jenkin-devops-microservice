@@ -76,16 +76,16 @@ pipeline{
 		}
 
 		stage('Build Docker Image'){
-			steps{
+			steps {
 				// docker build -t harsh2013/currency-exchange-devops:$env.BUILD_TAG
-				script{
+				script {
 					dockerImage = docker.build("harsh2013/currency-exchange-devops:${env.BUILD_TAG}")
 				}
 			}
 		}
 
 		stage('Push Docker Image'){
-			steps{
+			steps {
 				script{
 					docker.withRegistry('', 'dockerhub'){
 						dockerImage.push();
